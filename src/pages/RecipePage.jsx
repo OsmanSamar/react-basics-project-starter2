@@ -11,7 +11,12 @@ import {
 
 export const RecipePage = ({ recipe, clickFn }) => {
   return (
-    <Center bgColor="blue.100" h="100vh" flexDirection="column">
+    <Center
+      bgColor="blue.100"
+      h="100vh"
+      flexDirection="column"
+      onClick={() => clickFn(recipe)}
+    >
       <Card borderRadius="xl" w="3xl" h="3xl">
         <CardBody>
           <Image h={64} w="sm" src={recipe.recipe.image} borderRadius="xl" />
@@ -20,7 +25,7 @@ export const RecipePage = ({ recipe, clickFn }) => {
             <Text>Meal type: {recipe.recipe.mealType}</Text>
             <Text>Dish type: {recipe.recipe.dishType}</Text>
             <Text>Total cooking time: {recipe.recipe.totalTime}</Text>
-            <Text>Diet label: {recipe.recipe.dietLabels.join(", ")}</Text>
+            <Text>Diet label: {recipe.recipe.dietLabels.join(", ")}</Text>s
             <Text>Health labels: {recipe.recipe.healthLabels.join(", ")}</Text>
             <Text>Cautions: {recipe.recipe.cautions.join(", ")}</Text>
             <ul>

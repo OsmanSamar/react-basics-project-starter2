@@ -2,8 +2,9 @@ import { useState } from "react";
 import { data } from "./utils/data";
 import { RecipeListPage } from "./pages/RecipeListPage";
 import { Heading } from "@chakra-ui/react";
-import { TextInput } from "./components/ui/TextInput";
 import { RecipePage } from "./pages/RecipePage";
+import { SearchRecipe } from "./components/SearchRecipe";
+import { TextInput } from "./components/ui/TextInput";
 
 export const App = () => {
   // Your state code here

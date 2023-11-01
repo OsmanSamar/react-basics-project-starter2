@@ -1,31 +1,56 @@
-import React from "react";
+import {
+  Card,
+  Image,
+  CardBody,
+  Stack,
+  Heading,
+  Text,
+  Center,
+  Button,
+} from "@chakra-ui/react";
 
-export const RecipePage = ({ recipe }) => {
+export const RecipePage = ({ recipe, clickFn }) => {
   return (
-    <div>
-      <h2>{recipe.label}</h2>
-      <img src={recipe.image} alt={recipe.label} />
-      <p>Meal type: {recipe.mealType}</p>
-      <p>Dish type: {recipe.dishType}</p>
-      <p>Total cooking time: {recipe.totalTime}</p>
-      <p>Diet label: {recipe.dietLabels.join(", ")}</p>
-      <p>Health labels: {recipe.healthLabels.join(", ")}</p>
-      <p>Cautions: {recipe.cautions.join(", ")}</p>
-      <ul>
-        {recipe.ingredients.map((ingredient) => (
-          <li key={ingredient.foodId}>{ingredient.text}</li>
-        ))}
-      </ul>
-      <p>Servings: {recipe.yield}</p>
-      <p>Total nutrients:</p>
-      <ul>
-        <li>Energy (kcal): {recipe.totalNutrients.ENERC_KCAL.quantity}</li>
-        <li>Protein (g): {recipe.totalNutrients.PROCNT.quantity}</li>
-        <li>Fat (g): {recipe.totalNutrients.FAT.quantity}</li>
-        <li>Carbs (g): {recipe.totalNutrients.CHOCDF.quantity}</li>
-        <li>Cholesterol (mg): {recipe.totalNutrients.CHOLE.quantity}</li>
-        <li>Sodium (mg): {recipe.totalNutrients.NA.quantity}</li>
-      </ul>
-    </div>
+    <Center bgColor="blue.100" h="100vh" flexDirection="column">
+      <Card borderRadius="xl" w="3xl" h="3xl">
+        <CardBody>
+          <Image h={64} w="sm" src={recipe.recipe.image} borderRadius="xl" />
+          <Stack mt="6" spacing="3">
+            <Heading>{recipe.recipe.label}</Heading>
+            <Text>Meal type: {recipe.recipe.mealType}</Text>
+            <Text>Dish type: {recipe.recipe.dishType}</Text>
+            <Text>Total cooking time: {recipe.recipe.totalTime}</Text>
+            <Text>Diet label: {recipe.recipe.dietLabels.join(", ")}</Text>
+            <Text>Health labels: {recipe.recipe.healthLabels.join(", ")}</Text>
+            <Text>Cautions: {recipe.recipe.cautions.join(", ")}</Text>
+            <ul>
+              {recipe.recipe.ingredients.map((ingredient) => (
+                <li key={ingredient.foodId}>{ingredient.text}</li>
+              ))}
+            </ul>
+            <Text>Servings: {recipe.recipe.yield}</Text>
+            <Text>Total nutrients:</Text>
+            <ul>
+              <li>
+                Energy (kcal):{" "}
+                {recipe.recipe.totalNutrients.ENERC_KCAL.quantity}
+              </li>
+              <li>
+                Protein (g): {recipe.recipe.totalNutrients.PROCNT.quantity}
+              </li>
+              <li>Fat (g): {recipe.recipe.totalNutrients.FAT.quantity}</li>
+              <li>Carbs (g): {recipe.recipe.totalNutrients.CHOCDF.quantity}</li>
+              <li>
+                Cholesterol (mg): {recipe.recipe.totalNutrients.CHOLE.quantity}
+              </li>
+              <li>Sodium (mg): {recipe.recipe.totalNutrients.NA.quantity}</li>
+            </ul>
+            <Button w="fit-content" onClick={() => clickFn()}>
+              Back to overview
+            </Button>
+          </Stack>
+        </CardBody>
+      </Card>
+    </Center>
   );
 };

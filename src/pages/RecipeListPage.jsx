@@ -1,6 +1,7 @@
+//import React from "react";
 import {
-  Heading,
   Image,
+  Heading,
   Text,
   Card,
   CardBody,
@@ -10,61 +11,59 @@ import {
 import { data } from "../utils/data";
 
 export const RecipeListPage = () => {
-  // You can play around with the console log, but ultimately remove it once you are done
-  console.log(data.hits[0].recipe.label);
   const recipes = data.hits.slice(0, 20);
   console.log(recipes);
-
   return (
-    <Flex flexWrap="wrap" justifyContent="center" mt="20px">
+    <Flex flexWrap="wrap" justifyContent="center" mt="10px">
       {recipes.map((recipe) => (
         <div key={recipe.recipe.uri}>
           <Card
             w="200px"
-            h="50x"
+            h="385px"
             mt="10px"
-            borderRadius="10px"
             pb="10px"
             bg="white"
             mr="10px"
+            borderRadius="10px"
           >
             <CardBody>
               <Image
-                h="100%"
                 w="100%"
+                h="100px"
                 objectFit="cover"
                 src={recipe.recipe.image}
                 alt={recipe.recipe.label}
-                borderRadius="sm"
+                borderRadius="10px"
               />
-              <Stack mt="6" pt="10px" textAlign="center">
-                <Text fontSize="md">{recipe.recipe.mealType}</Text>
-                <Heading as="h3" size="md" textAlign="center">
+              <Stack mt="2" pt="5px" textAlign="center">
+                <Text fontSize="sm">{recipe.recipe.mealType}</Text>
+                <Heading as="h3" size="sm" textAlign="center">
                   {recipe.recipe.label}
                 </Heading>
                 {recipe.recipe.healthLabels.includes("Vegan") && (
-                  <Text fontSize="md" textAlign="center">
+                  <Text fontSize="sm" textAlign="center">
                     Vegan
                   </Text>
                 )}
                 {recipe.recipe.healthLabels.includes("Vegetarian") && (
-                  <Text fontSize="md" textAlign="center">
+                  <Text fontSize="sm" textAlign="center">
                     <span style={{ backgroundColor: "plum" }}>Vegetarian</span>
                   </Text>
                 )}
-                <Text fontSize="md" textAlign="center">
+                <Text fontSize="sm" textAlign="center">
                   <span style={{ backgroundColor: "cyan " }}>
                     {recipe.recipe.dietLabels}
                   </span>
                 </Text>
-                <Text fontSize="md" textAlign="center">
+                <Text fontSize="sm" textAlign="center">
                   Dish :{recipe.recipe.dishType}
                 </Text>
 
-                <Text fontSize="md" textAlign="center">
-                  Cautions{" "}
+                <Text fontSize="sm" textAlign="center">
+                  Cautions:
+                  <br />
                   <span style={{ backgroundColor: "lightsalmon" }}>
-                    :{recipe.recipe.cautions}
+                    {recipe.recipe.cautions}
                   </span>
                 </Text>
               </Stack>

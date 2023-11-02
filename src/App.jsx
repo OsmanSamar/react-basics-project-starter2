@@ -1,15 +1,18 @@
 import { useState } from "react";
 import { data } from "./utils/data";
 import { RecipeListPage } from "./pages/RecipeListPage";
-import { Heading } from "@chakra-ui/react";
 import { RecipePage } from "./pages/RecipePage";
-import { SearchRecipe } from "./components/SearchRecipe";
-import { TextInput } from "./components/ui/TextInput";
+import { Header } from "./components/ui/Header";
 
 export const App = () => {
   // Your state code here
-  //const [recipes, setRecipes] = useState(data.hits[0]);
-  const [selectedRecipe, setSelectedRecipe] = useState(data.hits[0]);
+  console.log(data.hits);
+  const [selectedRecipe, setSelectedRecipe] = useState(data.hits);
+  const [search, setSerach] = useState("");
+
+  const onInputChange = (e) => {
+    setSerach(e.target.value);
+  };
 
   // const handleRecipeSelect = (recipe) => {
   //  setSelectedRecipe(recipe);
@@ -20,15 +23,9 @@ export const App = () => {
 
   return (
     <>
-      <Heading textAlign="center" mb="5" fontSize="4xl" color="white">
-        Winc Recipe Checker
-      </Heading>
-      <TextInput />
-      {selectedRecipe ? (
-        <RecipeListPage item={selectedRecipe} />
-      ) : (
-        <RecipePage />
-      )}
+      <Header search={search} onInputChange={onInputChange} />
+
+      {selectedRecipe ? <RecipeListPage /> : <RecipePage />}
     </>
   );
 };

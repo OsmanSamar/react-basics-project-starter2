@@ -1,4 +1,4 @@
-//import React from "react";
+import React from "react";
 import {
   Image,
   Heading,
@@ -13,6 +13,7 @@ import { data } from "../utils/data";
 export const RecipeListPage = () => {
   const recipes = data.hits.slice(0, 20);
   console.log(recipes);
+  console.log("recipes");
   return (
     <Flex flexWrap="wrap" justifyContent="center" mt="10px">
       {recipes.map((recipe) => (

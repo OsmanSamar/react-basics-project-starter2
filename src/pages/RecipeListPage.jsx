@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Image,
   Heading,
@@ -7,17 +7,24 @@ import {
   CardBody,
   Stack,
   Flex,
+  filter,
 } from "@chakra-ui/react";
 import { data } from "../utils/data";
 
-export const RecipeListPage = () => {
-  const recipes = data.hits.slice(0, 20);
-  console.log(recipes);
-  console.log("recipes");
+export const RecipeListPage = (props) => {
+  // console.log(recipes);
+  // console.log("recipes");
+  const { search, onRecipeClick } = props;
+
+  const recipes = data.hits.slice(0, 20).filter((recipeContainer) => {
+    const { recipe } = recipeContainer;
+    return search?.length > 0 ? (recipe.label ?? "").includes(search) : true;
+  });
+
   return (
     <Flex flexWrap="wrap" justifyContent="center" mt="10px">
       {recipes.map((recipe) => (
-        <div key={recipe.recipe.uri}>
+        <div key={recipe.recipe.url} onClick={() => onRecipeClick(recipe)}>
           <Card
             w="200px"
             h="385px"
@@ -48,22 +55,24 @@ export const RecipeListPage = () => {
                 )}
                 {recipe.recipe.healthLabels.includes("Vegetarian") && (
                   <Text fontSize="sm" textAlign="center">
-                    <span style={{ backgroundColor: "plum" }}>Vegetarian</span>
+                    <span style={{ backgroundColor: "#ffe6ff" }}>
+                      Vegetarian
+                    </span>
                   </Text>
                 )}
                 <Text fontSize="sm" textAlign="center">
-                  <span style={{ backgroundColor: "cyan " }}>
+                  <span style={{ backgroundColor: "#ccffe6" }}>
                     {recipe.recipe.dietLabels}
                   </span>
                 </Text>
+                s
                 <Text fontSize="sm" textAlign="center">
                   Dish :{recipe.recipe.dishType}
                 </Text>
-
                 <Text fontSize="sm" textAlign="center">
                   Cautions:
                   <br />
-                  <span style={{ backgroundColor: "lightsalmon" }}>
+                  <span style={{ backgroundColor: "#ffcccc" }}>
                     {recipe.recipe.cautions}
                   </span>
                 </Text>

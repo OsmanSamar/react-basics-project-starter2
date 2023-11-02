@@ -19,13 +19,6 @@ export const App = () => {
     setSelectedRecipe(recipe);
   };
 
-  // const handleRecipeSelect = (recipe) => {
-  //  setSelectedRecipe(recipe);
-  // };
-  //const handleSearch = (filteredRecipes) => {
-  // console.log(filteredRecipes);
-  //};
-
   return (
     <>
       <Header search={search} onInputChange={onInputChange} />

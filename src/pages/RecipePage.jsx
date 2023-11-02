@@ -91,24 +91,29 @@ export const RecipePage = ({ recipe, clickFn }) => {
                   <ul>
                     <li>
                       Energy (kcal):{" "}
-                      {recipe.recipe.totalNutrients.ENERC_KCAL.quantity}
+                      {recipe.recipe.totalNutrients.ENERC_KCAL.quantity.toFixed(
+                        0
+                      )}
                     </li>
                     <li>
                       Protein (g):{" "}
-                      {recipe.recipe.totalNutrients.PROCNT.quantity}
+                      {recipe.recipe.totalNutrients.PROCNT.quantity.toFixed(0)}
                     </li>
                     <li>
-                      Fat (g): {recipe.recipe.totalNutrients.FAT.quantity}
+                      Fat (g):{" "}
+                      {recipe.recipe.totalNutrients.FAT.quantity.toFixed(0)}
                     </li>
                     <li>
-                      Carbs (g): {recipe.recipe.totalNutrients.CHOCDF.quantity}
+                      Carbs (g):{" "}
+                      {recipe.recipe.totalNutrients.CHOCDF.quantity.toFixed(0)}
                     </li>
                     <li>
                       Cholesterol (mg):{" "}
-                      {recipe.recipe.totalNutrients.CHOLE.quantity}
+                      {recipe.recipe.totalNutrients.CHOLE.quantity.toFixed(0)}
                     </li>
                     <li>
-                      Sodium (mg): {recipe.recipe.totalNutrients.NA.quantity}
+                      Sodium (mg):{" "}
+                      {recipe.recipe.totalNutrients.NA.quantity.toFixed(0)}
                     </li>
                   </ul>
                 </div>

@@ -1,0 +1,83 @@
+import React, {useState} from "react";
+import {
+  Image,
+  Heading,
+  Text,
+  Card,
+  CardBody,
+  Stack,
+  Flex, filter,
+} from "@chakra-ui/react";
+import { data } from "../utils/data";
+
+export const RecipeListPage = (props) => {
+  // console.log(recipes);
+  // console.log("recipes");
+  const { search, onRecipeClick } = props;
+
+  const recipes = data.hits.slice(0, 20).filter(recipeContainer => {
+    const { recipe } = recipeContainer;
+    return search?.length > 0 ? (recipe.label ?? "").includes(search): true;
+  });
+
+  return (
+    <Flex flexWrap="wrap" justifyContent="center" mt="10px">
+      {recipes.map((recipe) => (
+        <div key={recipe.recipe.url} onClick={() => onRecipeClick(recipe)}>
+          <Card
+            w="200px"
+            h="385px"
+            mt="10px"
+            pb="10px"
+            bg="white"
+            mr="10px"
+            borderRadius="10px"
+          >
+            <CardBody>
+              <Image
+                w="100%"
+                h="100px"
+                objectFit="cover"
+                src={recipe.recipe.image}
+                alt={recipe.recipe.label}
+                borderRadius="10px"
+              />
+              <Stack mt="2" pt="5px" textAlign="center">
+                <Text fontSize="sm">{recipe.recipe.mealType}</Text>
+                <Heading as="h3" size="sm" textAlign="center">
+                  {recipe.recipe.label}
+                </Heading>
+                {recipe.recipe.healthLabels.includes("Vegan") && (
+                  <Text fontSize="sm" textAlign="center">
+                    Vegan
+                  </Text>
+                )}
+                {recipe.recipe.healthLabels.includes("Vegetarian") && (
+                  <Text fontSize="sm" textAlign="center">
+                    <span style={{ backgroundColor: "plum" }}>Vegetarian</span>
+                  </Text>
+                )}
+                <Text fontSize="sm" textAlign="center">
+                  <span style={{ backgroundColor: "cyan " }}>
+                    {recipe.recipe.dietLabels}
+                  </span>
+                </Text>
+                <Text fontSize="sm" textAlign="center">
+                  Dish :{recipe.recipe.dishType}
+                </Text>
+
+                <Text fontSize="sm" textAlign="center">
+                  Cautions:
+                  <br />
+                  <span style={{ backgroundColor: "lightsalmon" }}>
+                    {recipe.recipe.cautions}
+                  </span>
+                </Text>
+              </Stack>
+            </CardBody>
+          </Card>
+        </div>
+      ))}
+    </Flex>
+  );
+};

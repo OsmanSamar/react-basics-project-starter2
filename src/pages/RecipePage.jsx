@@ -11,7 +11,6 @@ import {
   Flex,
   VStack,
 } from "@chakra-ui/react";
-
 export const RecipePage = ({ recipe, clickFn }) => {
   console.log("REcipepage", recipe);
   return (
@@ -19,7 +18,9 @@ export const RecipePage = ({ recipe, clickFn }) => {
       <Card
         borderRadius="xl"
         w="3xl"
-        h="65rem"
+        h="80rem"
+        mb="3"
+        mt="7"
         bgColor="white"
         flexDirection="column"
         cursor="pointer"

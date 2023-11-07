@@ -2,15 +2,17 @@ import {
   Card,
   Image,
   CardBody,
-  CardFooter,
   Stack,
   Heading,
   Text,
   Center,
-  Button,
   Flex,
   VStack,
+  CardHeader,
 } from "@chakra-ui/react";
+//import { RecipeListPage } from "./RecipeListPage";
+import { FaArrowLeft } from "react-icons/fa";
+
 export const RecipePage = ({ recipe, clickFn }) => {
   console.log("REcipepage", recipe);
   return (
@@ -26,6 +28,16 @@ export const RecipePage = ({ recipe, clickFn }) => {
         cursor="pointer"
         _hover={{ transform: "scale(1.01)" }}
       >
+        <CardHeader
+          onClick={() => {
+            // clickFn();
+            window.location.href = "/overview";
+            //is a JavaScript property that returns the URL of the current page.
+          }}
+        >
+          <FaArrowLeft size={22} />
+          <span className="fs-18 fw-6"></span>
+        </CardHeader>
         <Image
           w="100%"
           h="35%"
@@ -122,19 +134,6 @@ export const RecipePage = ({ recipe, clickFn }) => {
             </VStack>
           </Stack>
         </Flex>
-        <CardFooter>
-          <Button
-            w="fit-content"
-            onClick={() => {
-              window.location.href = "/overview";
-              //is a JavaScript property that returns the URL of the current page.
-            }}
-            variant="solid"
-            colorScheme="blue"
-          >
-            Back to overview
-          </Button>
-        </CardFooter>
       </Card>
     </Center>
   );

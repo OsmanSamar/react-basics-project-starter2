@@ -9,18 +9,20 @@ import {
   Flex,
   VStack,
   CardHeader,
+  Grid,
 } from "@chakra-ui/react";
-//import { RecipeListPage } from "./RecipeListPage";
+
 import { FaArrowLeft } from "react-icons/fa";
 
-export const RecipePage = ({ recipe, clickFn }) => {
+export const RecipePage = ({ recipe, clickFn, ReSetRecipes }) => {
   console.log("REcipepage", recipe);
+
   return (
     <Center onClick={() => clickFn(recipe)}>
       <Card
         borderRadius="xl"
         w="3xl"
-        h="80rem"
+        h="auto"
         mb="3"
         mt="7"
         bgColor="white"
@@ -30,17 +32,18 @@ export const RecipePage = ({ recipe, clickFn }) => {
       >
         <CardHeader
           onClick={() => {
-            // clickFn();
-            window.location.href = "/overview";
+            ReSetRecipes();
+
+            // window.location.href = "/overview";
             //is a JavaScript property that returns the URL of the current page.
           }}
         >
-          <FaArrowLeft size={22} />
+          <FaArrowLeft size={16} />
           <span className="fs-18 fw-6"></span>
         </CardHeader>
         <Image
           w="100%"
-          h="35%"
+          h="35rem"
           objectFit="cover"
           src={recipe.recipe.image}
           borderRadius="xl"

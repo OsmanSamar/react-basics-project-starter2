@@ -18,6 +18,10 @@ export const App = () => {
     setSerach(e.target.value);
   };
 
+  const ReSetRecipes = () => {
+    setSelectedRecipe(undefined); // selectedRecipe = undefined;
+  };
+
   //render the Header component if selectedRecipe is falsy. If selectedRecipe is truthy, the Header component will not be rendered.
   return (
     <>
@@ -28,7 +32,7 @@ export const App = () => {
       {!selectedRecipe ? (
         <RecipeListPage search={search} onRecipeClick={onRecipeClick} />
       ) : (
-        <RecipePage recipe={selectedRecipe} />
+        <RecipePage ReSetRecipes={ReSetRecipes} recipe={selectedRecipe} />
       )}
     </>
   );

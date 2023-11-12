@@ -40,7 +40,7 @@ export const RecipeListPage = (props) => {
                   objectFit="cover"
                   src={recipe.recipe.image}
                   alt={recipe.recipe.label}
-                  borderRadius="10px"
+                  borderRadius="1rem 1rem 1rem 1rem "
                 />
                 <Stack mt="2" pt="5px" textAlign="center">
                   <Text fontSize="sm">{recipe.recipe.mealType}</Text>

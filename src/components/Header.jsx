@@ -6,7 +6,13 @@ export const Header = (props) => {
   return (
     <Center mb="10" textAlign="center">
       <form className="Search-form">
-        <Heading textAlign="center" mb="5" fontSize="3xl" color="white">
+        <Heading
+          textAlign="center"
+          mb="5"
+          fontSize="3xl"
+          color="white"
+          margin="0.5rem 5%"
+        >
           Winc Recipe Checker
         </Heading>
         <Input
@@ -15,6 +21,7 @@ export const Header = (props) => {
           width="40vw"
           minW={200}
           padding="2"
+          margin="0.5rem 5%"
           bg="white"
           value={search}
           onChange={onInputChange}

@@ -38,15 +38,14 @@ export const RecipePage = ({ recipe, clickFn, ReSetRecipes }) => {
             //is a JavaScript property that returns the URL of the current page.
           }}
         >
-          <FaArrowLeft size={16} />
-          <span className="fs-18 fw-6"></span>
+          <FaArrowLeft size={14} />
         </CardHeader>
         <Image
           w="100%"
-          h="35rem"
+          h="25rem"
           objectFit="cover"
           src={recipe.recipe.image}
-          borderRadius="xl"
+          borderRadius="1rem 1rem 1rem 1rem"
         />
         <Flex direction="row">
           <Stack direction="column" w="50%">

@@ -25,6 +25,7 @@ export const RecipePage = ({ recipe, clickFn, ReSetRecipes }) => {
         mb="7px"
         mt="7px"
         mr="10px"
+        p="10px"
         bgColor="white"
         flexDirection="column"
         cursor="pointer"

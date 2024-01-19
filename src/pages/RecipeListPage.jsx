@@ -21,7 +21,15 @@ export const RecipeListPage = (props) => {
 
   return (
     <>
-      <Flex flexWrap="wrap" justifyContent="center" mt="10px">
+      <Flex
+        flexWrap="wrap"
+        justifyContent="space-between"
+        gap="10px"
+        mt="10px"
+        mb="20px"
+        p="10px"
+        mr="20px"
+      >
         {recipes.map((recipe) => (
           <div key={recipe.recipe.url} onClick={() => onRecipeClick(recipe)}>
             <Card
@@ -29,9 +37,11 @@ export const RecipeListPage = (props) => {
               h="385px"
               mt="10px"
               pb="10px"
+              p="10px"
               bg="white"
               mr="10px"
               borderRadius="10px"
+              boxSizing="border-box"
             >
               <CardBody>
                 <Image

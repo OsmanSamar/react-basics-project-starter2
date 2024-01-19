@@ -9,7 +9,6 @@ import {
   Flex,
   VStack,
   CardHeader,
-  Grid,
 } from "@chakra-ui/react";
 
 import { FaArrowLeft } from "react-icons/fa";
@@ -21,10 +20,11 @@ export const RecipePage = ({ recipe, clickFn, ReSetRecipes }) => {
     <Center onClick={() => clickFn(recipe)}>
       <Card
         borderRadius="xl"
-        w="3xl"
+        w={{ base: "90%", sm: "80%", md: "70%", lg: "60%", xl: "50%" }}
         h="auto"
-        mb="3"
-        mt="7"
+        mb="7px"
+        mt="7px"
+        mr="10px"
         bgColor="white"
         flexDirection="column"
         cursor="pointer"

@@ -34,10 +34,11 @@ export const RecipeListPage = (props) => {
           <div key={recipe.recipe.url} onClick={() => onRecipeClick(recipe)}>
             <Card
               w="200px"
-              h="387px"
+              h="400px"
               mt="10px"
+              mb="15px"
               pb="10px"
-              p="10px"
+              p="4px"
               bg="white"
               mr="10px"
               borderRadius="10px"

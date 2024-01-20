@@ -23,8 +23,8 @@ export const RecipeListPage = (props) => {
     <>
       <Flex
         flexWrap="wrap"
-        justifyContent="space-between"
-        gap="10px"
+        justifyContent="center"
+        gap="5px"
         mt="10px"
         mb="20px"
         p="10px"
@@ -34,7 +34,7 @@ export const RecipeListPage = (props) => {
           <div key={recipe.recipe.url} onClick={() => onRecipeClick(recipe)}>
             <Card
               w="200px"
-              h="385px"
+              h="387px"
               mt="10px"
               pb="10px"
               p="10px"

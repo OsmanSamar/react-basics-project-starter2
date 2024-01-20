@@ -36,7 +36,7 @@ export const RecipeListPage = (props) => {
               w="200px"
               h="400px"
               mt="10px"
-              mb="15px"
+              mb="20px"
               pb="10px"
               p="4px"
               bg="white"

@@ -9,7 +9,7 @@ export const Header = (props) => {
         <Heading
           textAlign="center"
           mb="5"
-          fontSize="3xl"
+          fontSize={["2xl", "2xl", "3xl"]}
           color="white"
           margin="0.5rem 5%"
         >

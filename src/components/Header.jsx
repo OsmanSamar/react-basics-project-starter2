@@ -4,7 +4,7 @@ import { Center, Input, Heading } from "@chakra-ui/react";
 export const Header = (props) => {
   const { search, onInputChange } = props;
   return (
-    <Center mb="10" textAlign="center">
+    <Center mb="10" pt="5" textAlign="center">
       <form className="Search-form">
         <Heading
           textAlign="center"

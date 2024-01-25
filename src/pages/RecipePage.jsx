@@ -46,7 +46,7 @@ export const RecipePage = ({ recipe, clickFn, ReSetRecipes }) => {
         mb="8"
         mt="8"
         m="8"
-        p="4"
+        p="2"
         overflow="visible"
         position="relative"
         /////

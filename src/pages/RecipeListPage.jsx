@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+//import React, { useState } from "react";
 import {
   Image,
   Heading,
@@ -23,25 +23,35 @@ export const RecipeListPage = (props) => {
     <>
       <Flex
         flexWrap="wrap"
+        w="100%"
         justifyContent="center"
+        align="center"
         gap="5px"
         mt="10px"
         mb="20px"
-        p="10px"
-        mr="20px"
+        pt="40px"
+        pb="20px"
+        px={{ base: 0, md: 10 }}
       >
         {recipes.map((recipe) => (
           <div key={recipe.recipe.url} onClick={() => onRecipeClick(recipe)}>
             <Card
-              w="200px"
+              // w=" 200px"
+              w={{ base: "300px", md: "200px" }}
+              shadow="md"
+              rounded="lg"
               h="400px"
-              mt="10px"
-              mb="20px"
-              pb="10px"
-              p="4px"
+              //h={{ base: "500px", md: "400px" }}
+              //  mt="10px"
+              //  mb="20px"
+              // pb="10px"
+              // p="4px"
               bg="white"
-              mr="10px"
-              borderRadius="10px"
+              //  mr="10px"
+
+              m="2"
+              p="2"
+              borderRadius="20px"
               boxSizing="border-box"
             >
               <CardBody>
@@ -51,7 +61,7 @@ export const RecipeListPage = (props) => {
                   objectFit="cover"
                   src={recipe.recipe.image}
                   alt={recipe.recipe.label}
-                  borderRadius="1rem 1rem 1rem 1rem "
+                  borderRadius="1rem 1rem 1rem 1rem"
                 />
                 <Stack mt="2" pt="5px" textAlign="center">
                   <Text fontSize="sm">{recipe.recipe.mealType}</Text>

@@ -19,13 +19,37 @@ export const RecipePage = ({ recipe, clickFn, ReSetRecipes }) => {
   return (
     <Center onClick={() => clickFn(recipe)}>
       <Card
+        // borderRadius="xl"
+        // w={{ base: "90%", md: "70%" }}
+        //h={{ base: "500px", md: "400px" }}
+        //w={{ base: "90%", md: "60%" }}
+        // h="auto"
+        // mb="7px"
+        // mt="7px"
+        //  margin="10px"
+        // p="10px"
+        //  bgColor="white"
+        //  flexDirection="column"
+        //  cursor="pointer"
+        // _hover={{ transform: "scale(1.01)" }}
         borderRadius="xl"
-        w={{ base: "90%", sm: "80%", md: "70%", lg: "60%", xl: "50%" }}
-        h="auto"
-        mb="7px"
-        mt="7px"
-        margin="10px"
-        p="10px"
+        // w={{ base: "90%", sm: "80%", md: "70%", lg: "60%", xl: "50%" }}
+        // h="auto"
+        // mb="7px"
+        // mt="7px"
+        //margin="10px"
+        // p="10px"
+        //w="550px"
+        // h="6xl"
+        w={{ base: " 700px", md: " 550px" }}
+        h={{ base: "10xl", md: "6xl" }}
+        mb="8"
+        mt="8"
+        m="8"
+        p="4"
+        overflow="visible"
+        position="relative"
+        /////
         bgColor="white"
         flexDirection="column"
         cursor="pointer"

@@ -9,6 +9,7 @@ import {
   Flex,
   VStack,
   CardHeader,
+  Badge,
 } from "@chakra-ui/react";
 
 import { FaArrowLeft } from "react-icons/fa";
@@ -41,15 +42,14 @@ export const RecipePage = ({ recipe, clickFn, ReSetRecipes }) => {
         // p="10px"
         //w="550px"
         // h="6xl"
-        w={{ base: " 700px", md: " 550px" }}
-        h={{ base: "10xl", md: "6xl" }}
+        w={{ base: " 700px", md: " 620px" }}
+        h={{ base: "10xl", md: "auto", lg: "auto" }}
         mb="8"
         mt="8"
         m="8"
         p="2"
         overflow="visible"
         position="relative"
-        /////
         bgColor="white"
         flexDirection="column"
         cursor="pointer"
@@ -72,10 +72,16 @@ export const RecipePage = ({ recipe, clickFn, ReSetRecipes }) => {
           src={recipe.recipe.image}
           borderRadius="1rem 1rem 1rem 1rem"
         />
-        <Flex direction="row">
-          <Stack direction="column" w="50%">
+        {/* <Flex direction="row"> */}
+        <Flex direction={{ base: "column", lg: "row" }} spacing="4">
+          {/* <Stack direction="column" w="50%"> */}
+          <Stack
+            direction="column"
+            w={{ base: "100%", md: " 60%", lg: "50%" }}
+            spacing="4"
+          >
             <VStack mt="3" spacing="3">
-              <CardBody fontFamily="bold">
+              <CardBody fontFamily="bold" borderRadius="md">
                 <div>
                   <Text> {recipe.recipe.mealType}</Text>
                   <Heading size="md" fontFamily="bold">
@@ -104,20 +110,27 @@ export const RecipePage = ({ recipe, clickFn, ReSetRecipes }) => {
             </VStack>
           </Stack>
 
-          <Stack direction="column" w="50%">
+          {/* <Stack direction="column" w="50%"> */}
+          <Stack direction="column" w={{ base: "100%", lg: "50%" }} spacing="4">
             <VStack mt="3" spacing="3">
-              <CardBody fontFamily="bold">
+              <CardBody fontFamily="bold" borderRadius="md">
                 <div>
                   <Text fontSize="xl">
                     Health labels: <br />{" "}
                   </Text>
-                  <span style={{ backgroundColor: "#ffe6ff" }}>
+                  {/* <span style={{ backgroundColor: "#ffe6ff" }}>
                     {recipe.recipe.healthLabels.join(", ")}
-                  </span>
+                  </span> */}
+                  {recipe.recipe.healthLabels.map((label) => (
+                    <Badge key={label} colorScheme="purple" mr="2">
+                      {label}
+                    </Badge>
+                  ))}
 
                   <Text fontSize="xl">
                     Diet: <br />{" "}
                   </Text>
+
                   <span style={{ backgroundColor: "#ccffe6" }}>
                     {recipe.recipe.dietLabels.join(", ")}
                   </span>

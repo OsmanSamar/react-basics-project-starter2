@@ -37,7 +37,7 @@ export const RecipeListPage = (props) => {
           <div key={recipe.recipe.url} onClick={() => onRecipeClick(recipe)}>
             <Card
               // w=" 200px"
-              w={{ base: "300px", md: "200px" }}
+              w={{ base: "300px", md: "250px" }}
               shadow="md"
               rounded="lg"
               h="400px"

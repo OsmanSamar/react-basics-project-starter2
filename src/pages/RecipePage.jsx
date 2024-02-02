@@ -54,6 +54,7 @@ export const RecipePage = ({ recipe, clickFn, ReSetRecipes }) => {
         flexDirection="column"
         cursor="pointer"
         _hover={{ transform: "scale(1.01)" }}
+        fontSize={{ base: "xl", md: "2xl", lg: "xl" }}
       >
         <CardHeader
           onClick={() => {
@@ -89,10 +90,10 @@ export const RecipePage = ({ recipe, clickFn, ReSetRecipes }) => {
                   </Heading>{" "}
                   <br />
                   <Text fontFamily="bold" fontSize="l">
-                    Total cooking time: {recipe.recipe.totalTime} Minutes
+                    Total cooking time: {recipe.recipe.totalTime} Minutes.
                   </Text>
                   <Text fontFamily="bold" fontSize="l">
-                    Servings: {recipe.recipe.yield}
+                    Servings: {recipe.recipe.yield}.
                   </Text>
                   <br />
                   <Text fontSize="xl" fontFamily="bold">
@@ -101,7 +102,7 @@ export const RecipePage = ({ recipe, clickFn, ReSetRecipes }) => {
                   <ul>
                     {recipe.recipe.ingredients.map((ingredient) => (
                       <Text fontFamily="bold" key={ingredient.foodId}>
-                        {ingredient.text}
+                        {ingredient.text}.
                       </Text>
                     ))}
                   </ul>
@@ -123,7 +124,7 @@ export const RecipePage = ({ recipe, clickFn, ReSetRecipes }) => {
                   </span> */}
                   {recipe.recipe.healthLabels.map((label) => (
                     <Badge key={label} colorScheme="purple" mr="2">
-                      {label}
+                      {label}.
                     </Badge>
                   ))}
 
@@ -131,14 +132,25 @@ export const RecipePage = ({ recipe, clickFn, ReSetRecipes }) => {
                     Diet: <br />{" "}
                   </Text>
 
-                  <span style={{ backgroundColor: "#ccffe6" }}>
+                  {/* <span style={{ backgroundColor: "#ccffe6" }}>
                     {recipe.recipe.dietLabels.join(", ")}
-                  </span>
+                  </span> */}
+                  {recipe.recipe.dietLabels.map((label) => (
+                    <Badge key={label} colorScheme="red" mr="2">
+                      {label}.
+                    </Badge>
+                  ))}
 
                   <Text fontSize="xl">Cautions: </Text>
-                  <span style={{ backgroundColor: "#ffcccc" }}>
+                  {/* <span style={{ backgroundColor: "#ffcccc" }}>
                     {recipe.recipe.cautions.join(", ")}
-                  </span>
+                  </span> */}
+
+                  {recipe.recipe.cautions.map((label) => (
+                    <Badge key={label} colorScheme="red" mr="2">
+                      {label}.
+                    </Badge>
+                  ))}
 
                   <Text fontSize="xl">Total nutrients:</Text>
                   <ul>

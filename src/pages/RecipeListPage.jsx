@@ -7,6 +7,7 @@ import {
   CardBody,
   Stack,
   Flex,
+  Badge,
 } from "@chakra-ui/react";
 import { data } from "../utils/data";
 export const RecipeListPage = (props) => {
@@ -75,26 +76,41 @@ export const RecipeListPage = (props) => {
                   )}
                   {recipe.recipe.healthLabels.includes("Vegetarian") && (
                     <Text fontSize="sm" textAlign="center">
-                      <span style={{ backgroundColor: "#ffe6ff" }}>
+                      {/* <span style={{ backgroundColor: "#ffe6ff" }}>
                         Vegetarian
-                      </span>
+                      </span> */}
+
+                      <Badge colorScheme="pink" mr="2">
+                        Vegetarian
+                      </Badge>
                     </Text>
                   )}
                   <Text fontSize="sm" textAlign="center">
-                    <span style={{ backgroundColor: "#ccffe6" }}>
+                    {/* <span style={{ backgroundColor: "#ccffe6" }}>
                       {recipe.recipe.dietLabels}
-                    </span>
+                    </span> */}
+
+                    {recipe.recipe.dietLabels.map((label) => (
+                      <Badge key={label} colorScheme="green" mr="2">
+                        {label}
+                      </Badge>
+                    ))}
                   </Text>
-                  s
+
                   <Text fontSize="sm" textAlign="center">
                     Dish :{recipe.recipe.dishType}
                   </Text>
                   <Text fontSize="sm" textAlign="center">
                     Cautions:
                     <br />
-                    <span style={{ backgroundColor: "#ffcccc" }}>
+                    {/* <span style={{ backgroundColor: "#ffcccc" }}>
                       {recipe.recipe.cautions}
-                    </span>
+                    </span> */}
+                    {recipe.recipe.cautions.map((label) => (
+                      <Badge key={label} colorScheme="red" mr="2">
+                        {label}
+                      </Badge>
+                    ))}
                   </Text>
                 </Stack>
               </CardBody>

@@ -29,7 +29,7 @@ export const RecipeListPage = (props) => {
         align="center"
         gap="5px"
         mt="10px"
-        mb="20px"
+        // mb="20px"
         pt="40px"
         pb="20px"
         px={{ base: 0, md: 10 }}

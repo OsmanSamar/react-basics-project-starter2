@@ -44,8 +44,8 @@ export const RecipePage = ({ recipe, clickFn, ReSetRecipes }) => {
         // h="6xl"
         w={{ base: "100%", md: " 620px" }}
         h={{ base: "10xl", md: "auto", lg: "auto" }}
-        mb="8"
-        mt="8"
+        // mb="8"
+        // mt="8"
         m="4"
         p="1"
         boxShadow="base"

@@ -42,12 +42,13 @@ export const RecipePage = ({ recipe, clickFn, ReSetRecipes }) => {
         // p="10px"
         //w="550px"
         // h="6xl"
-        w={{ base: " 700px", md: " 620px" }}
+        w={{ base: "100%", md: " 620px" }}
         h={{ base: "10xl", md: "auto", lg: "auto" }}
         mb="8"
         mt="8"
-        m="8"
-        p="2"
+        m="4"
+        p="1"
+        boxShadow="base"
         overflow="visible"
         position="relative"
         bgColor="white"
@@ -128,7 +129,7 @@ export const RecipePage = ({ recipe, clickFn, ReSetRecipes }) => {
                     </Badge>
                   ))}
 
-                  <Text fontSize="xl">
+                  <Text fontSize="xl" mt="1">
                     Diet: <br />{" "}
                   </Text>
 
@@ -152,31 +153,41 @@ export const RecipePage = ({ recipe, clickFn, ReSetRecipes }) => {
                     </Badge>
                   ))}
 
-                  <Text fontSize="xl">Total nutrients:</Text>
-                  <ul>
-                    <li>
+                  <Text fontSize="xl" mb="1">
+                    Total nutrients:
+                  </Text>
+                  <ul
+                    style={{
+                      listStyleType: "none",
+                      padding: 0,
+                      margin: 0,
+                      display: "flex",
+                      flexWrap: "wrap",
+                    }}
+                  >
+                    <li style={{ marginRight: "1rem" }}>
                       Energy (kcal):{" "}
                       {recipe.recipe.totalNutrients.ENERC_KCAL.quantity.toFixed(
                         0
                       )}
                     </li>
-                    <li>
+                    <li style={{ marginRight: "1rem" }}>
                       Protein (g):{" "}
                       {recipe.recipe.totalNutrients.PROCNT.quantity.toFixed(0)}
                     </li>
-                    <li>
+                    <li style={{ marginRight: "1rem" }}>
                       Fat (g):{" "}
                       {recipe.recipe.totalNutrients.FAT.quantity.toFixed(0)}
                     </li>
-                    <li>
+                    <li style={{ marginRight: "1rem" }}>
                       Carbs (g):{" "}
                       {recipe.recipe.totalNutrients.CHOCDF.quantity.toFixed(0)}
                     </li>
-                    <li>
+                    <li style={{ marginRight: "1rem" }}>
                       Cholesterol (mg):{" "}
                       {recipe.recipe.totalNutrients.CHOLE.quantity.toFixed(0)}
                     </li>
-                    <li>
+                    <li style={{ marginRight: "1rem" }}>
                       Sodium (mg):{" "}
                       {recipe.recipe.totalNutrients.NA.quantity.toFixed(0)}
                     </li>

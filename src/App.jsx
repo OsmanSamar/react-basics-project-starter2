@@ -26,7 +26,7 @@ export const App = () => {
   //render the Header component if selectedRecipe is falsy. If selectedRecipe is truthy, the Header component will not be rendered.
   return (
     <>
-      <Box minH="970vh" m="0" p="0" bg="cornflowerblue">
+      <Box minH="990vh" m="0" p="0" bg="cornflowerblue">
         {!selectedRecipe ? (
           <Header search={search} onInputChange={onInputChange} />
         ) : null}
